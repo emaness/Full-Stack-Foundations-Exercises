@@ -1,18 +1,24 @@
 <html>
 <body>
 
-{%for r in restaurants%}
-
-	{{r.name}}
-
-	<a href="#">Edit</a>
-	<a href="#">Delete</a>
+{%if restaurants == []:%}
+	"There aren't any restaurants."
 </br>
-<a href="#">Menu</a>
+	<a href="#">Fix that here</a>
+{%else:%}
+	{%for r in restaurants%}
+
+		{{r.name}}
+
+		<a href="#">Edit</a>
+		<a href="#">Delete</a>
+</br>
+		<a href="#">Menu</a>
 
 </br>
 </br>
 	{%endfor%}
+{%endif%}
 
 
 
