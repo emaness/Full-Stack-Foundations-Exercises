@@ -4,7 +4,7 @@
 
 <h1>New Restaurant</h1>
 
-<form action ="#" method = 'post'>
+<form action ="{{url_for('newRestaurant')}}" method = 'POST'>
 
 </br>
 
@@ -12,7 +12,7 @@
 
 <input type = "submit" value="Create">
 
-<a href= "#" >Cancel</a>
+<a href= "{{url_for('viewRestaurants')}}" >Cancel</a>
 
 </form>
 
