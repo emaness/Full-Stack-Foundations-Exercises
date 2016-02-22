@@ -1,5 +1,7 @@
 <html>
-
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheet.css') }}">
+	</head>
 <body>
 
 <h1>New Restaurant</h1>
@@ -7,13 +9,28 @@
 <form action ="{{url_for('newRestaurant')}}" method = 'POST'>
 
 </br>
+<div class = 'flash'>
 
-<input type= "text" size= 30 name="name" placeholder= "name">
+		{% with messages = get_flashed_messages() %}
+	{% if messages %}
+
+		<ul>
+		{% for message in messages %}
+			<li><strong> {{ message }} </strong></li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+
+		{% endwith %}
+</div>
+</br>
+<div class='pane'>
+<input type= "text" size= 30 name="name" placeholder= "restaurant name">
 
 <input type = "submit" value="Create">
 
 <a href= "{{url_for('viewRestaurants')}}" >Cancel</a>
-
+</div>
 </form>
 
 </body>

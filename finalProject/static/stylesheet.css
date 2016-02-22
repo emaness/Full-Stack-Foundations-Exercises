@@ -1,0 +1,21 @@
+body            { font-family: sans-serif; background-image: url('lasagne_wallpaper.jpg'); background-color: #00081A }
+h1, h2, h3, h4       { color: #ECD19D; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+p, dd, dt               {}
+
+a {text-decoration: none; color: #FFFFCC; font-size: .75em;}
+
+.pane {position:absolute; left: 25%; right: 25%; border: 2px solid;
+    border-radius: 15px; padding: 10px; margin: 5px; border-color: #6E7D9E; background-color: #2E4272 }
+.buffer {height:60px; width:100%;}
+.header         {left:50%; text-align: center;}
+.name {width:50%;display: inline-block; float: left; color:#FFFFCC}
+.description { color: #FFFFFE;}
+.price {text-align: right; width:50%; float: right; color: #999999;}
+.editdeletepane{ color: #FFFFCC;}
+.restaurantname{color:#ECD19D; position:absolute}
+.restaurantmenu{color:#ECD19D;position:absolute; left:90%; padding-top:8; font-size:1.2em;}
+.flash          { background: #cee5F5; }

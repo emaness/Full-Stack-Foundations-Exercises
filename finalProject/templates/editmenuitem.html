@@ -1,30 +1,48 @@
 <html>
-
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheet.css') }}">
+	</head>
 <body>
 
 <h1>Edit Menu Item</h1>
 
-<form action ="#" method = 'post'>
+<form action ="{{url_for('editMenuItem', menu_id=item.id, restaurant_id=restaurant_id)}}" method = 'POST'>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
 
+		<ul>
+		{% for message in messages %}
+			<li><strong> {{ message }} </strong></li>
+		{% endfor %}
+		</ul>
+	{% endif %}
 
-Name:
+		{% endwith %}
 
 </br>
-
-<input type= "text" size= 30 name="name" placeholder= {{item.name}}>
-
-<input type= "text" size= 30 name="course" placeholder= {{item.course}}>
-
-<input type= "text" size= 30 name="description" placeholder= {{item.description}}>
-
-<input type= "text" size= 30 name="price" placeholder= {{item.price}}>
-
+<div class='pane'>
+Name: </br>
+<input type= "text" size= 30 name="name" placeholder= "{{item.name}}">
+</br>
+</br>
+Course: </br>
+<input type= "text" size= 30 name="course" placeholder= "{{item.course}}">
+</br>
+</br>
+Description: </br>
+<input type= "text" size= 30 name="description" placeholder= "{{item.description}}">
+</br>
+</br>
+Price: </br>
+<input type= "text" size= 30 name="price" placeholder= "{{item.price}}">
+</br>
+</br>
 <input type = "submit" value="Edit">
 
 
 
-<a href= "#" >Cancel</a>
-
+<a href= "{{url_for('restaurantMenu', restaurant_id=restaurant_id)}}" >Cancel</a>
+</div>
 </form>
 
 </body>

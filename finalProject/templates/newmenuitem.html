@@ -1,13 +1,27 @@
 <html>
-
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheet.css') }}">
+</head>
 <body>
 
 <h1>New Menu Item</h1>
 
 <form action ="{{url_for('newMenuItem', restaurant_id=restaurant.id)}}" method = 'POST'>
 
-</br>
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
 
+		<ul>
+		{% for message in messages %}
+			<li><strong> {{ message }} </strong></li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+
+		{% endwith %}
+
+</br>
+<div class= 'pane'>
 <input type= "text" size= 30 name="name" placeholder= "name">
 </br>
 </br>
@@ -24,7 +38,7 @@
 </br>
 </br>
 <a href= "{{url_for('restaurantMenu', restaurant_id=restaurant.id)}}" >Cancel</a>
-
+</div>
 </form>
 
 </body>
